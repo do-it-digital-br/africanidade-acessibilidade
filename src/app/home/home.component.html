@@ -1,1 +1,7 @@
-<p>home works!</p>
+<section class="album-cover">
+    <img [src]="albumCoverImg" alt="capa-album">
+</section>
+
+<section *ngIf="book && page" class="player">
+    <audio [src]="audioSrc" controls autoplay #player></audio>
+</section>

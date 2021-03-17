@@ -8,11 +8,27 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  public book: string| undefined;
+  public page: string |undefined;
+
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params) => {
-      console.log(params)
+      if (params.book) this.book = params.book;
+      if (params.page) this.page = params.page;
     })
+  }
+
+  public get albumCoverImg(): string {
+    if (!this.book) return '';
+    
+    return ``;
+  }
+
+  public get audioSrc() : string {
+    if (!this.book || !this.page) return '';
+
+    return `/assets/audios/${this.book}/${this.page}.mp3`;
   }
 }
