@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   public get albumCoverImg(): string {
     if (!this.book) return '';
     
-    return ``;
+    return `/assets/images/albums/default.png`;
   }
 
   public get audioSrc() : string {
