@@ -1,0 +1,12 @@
+.album-cover > img {
+    width: 100%;
+}
+
+.player {
+    padding-bottom: 32px;
+    padding-top: 32px;
+}
+
+.player > audio {
+    width: 100%;
+}
