@@ -1,5 +1,29 @@
-.album-cover > img {
+.back {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.back-color {
+    height: 60vh;
     width: 100%;
+}
+
+.front {
+    padding: 16px;
+    position: fixed;
+    top: 20px;
+}
+
+.album-cover {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.album-cover > img {
+    width: 80%;
 }
 
 .player {

@@ -1,7 +1,13 @@
-<section class="album-cover">
-    <img [src]="albumCoverImg" alt="Capa do Livro">
-</section>
+<div class="back">
+    <div class="back-color" style="background-color: red;"></div>
+</div>
 
-<section *ngIf="book && page" class="player">
-    <audio [src]="audioSrc" controls autoplay #player></audio>
-</section>
+<div class="front">
+    <section class="album-cover">
+        <img [src]="albumCoverImg" alt="Capa do Livro">
+    </section>
+    
+    <section *ngIf="book && page" class="player">
+        <audio [src]="audioSrc" controls autoplay #player></audio>
+    </section>
+</div>
