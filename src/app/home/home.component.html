@@ -1,5 +1,5 @@
 <div class="back">
-    <div class="back-color" style="background-color: red;"></div>
+    <div class="back-color" [ngStyle]="{ 'background-color': backgroundColor }"></div>
 </div>
 
 <div class="front">
@@ -8,6 +8,11 @@
     </section>
     
     <section *ngIf="book && page" class="player">
-        <audio [src]="audioSrc" controls autoplay #player></audio>
+        <button mat-fab *ngIf="isPaused" (click)="onPlay()">
+            <mat-icon>play_arrow</mat-icon>
+        </button>
+        <button mat-fab *ngIf="!isPaused" (click)="onPause()">
+            <mat-icon>pause</mat-icon>
+        </button>
     </section>
 </div>

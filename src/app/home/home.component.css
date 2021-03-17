@@ -11,9 +11,9 @@
 }
 
 .front {
-    padding: 16px;
     position: fixed;
     top: 20px;
+    width: 100%;
 }
 
 .album-cover {
@@ -27,10 +27,23 @@
 }
 
 .player {
-    padding-bottom: 32px;
-    padding-top: 32px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 64px;
+    padding-top: 64px;
 }
 
 .player > audio {
     width: 100%;
+}
+
+button {
+    background-color: white !important;
+    height: 100px;
+    width: 100px;
+}
+
+mat-icon {
+    color: black !important
 }
