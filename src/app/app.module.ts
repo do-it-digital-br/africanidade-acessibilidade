@@ -8,6 +8,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
 
 @NgModule({
@@ -22,7 +23,14 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [
+      {
+        provide: 'externalUrlRedirectResolver',
+        useValue: (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
+          window.location.href = (route.data as any).externalUrl;
+        }
+      }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
