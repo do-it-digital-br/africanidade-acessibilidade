@@ -1,0 +1,1 @@
+this folder hosts qr codes with urls to be printed in each book
