@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -37,13 +38,13 @@ export class HomeComponent implements OnInit, OnInit {
   public get albumCoverImg(): string {
     if (!this.book) return '';
     
-    return `/assets/images/albums/${this.book}.jpeg`;
+    return `${environment.domain}/assets/images/albums/${this.book}.jpeg`;
   }
 
   public get audioSrc() : string {
     if (!this.book || !this.page) return '';
 
-    return `/assets/audios/${this.book}/${this.page}.mp3`;
+    return `${environment.domain}/assets/audios/${this.book}/${this.page}.mp3`;
   }
 
   public get backgroundColor(): string {
