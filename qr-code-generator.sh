@@ -6,6 +6,9 @@ URL='https://editorabaoba.com';
 ASSETS_DIR=$PWD/src/assets/audios/*;
 OUTPUT_DIR=$PWD/qr-codes/;
 
+QRCODE_SIZE=1080;
+QRCODE_DPI=300;
+
 for book_dir in $ASSETS_DIR ; do
 
     BOOK=$(basename $book_dir)
@@ -23,7 +26,7 @@ for book_dir in $ASSETS_DIR ; do
         MP3_FILE=$(basename $page_dir)
         PAGE=$(echo $MP3_FILE | cut -d . -f1)
         
-        qrencode -o "$OUTPUT_DIR/$BOOK/$PAGE.png" $URL/$BOOK/$PAGE
+        qrencode -s $QRCODE_SIZE -d $QRCODE_DPI -o "$OUTPUT_DIR/$BOOK/$PAGE.png" $URL/$BOOK/$PAGE
     done
 
 done
