@@ -31,7 +31,6 @@ export class HomeComponent implements OnInit, OnInit {
       if (params.page) this.page = params.page;
 
       this.player.src = this.audioSrc;
-      this.player.play();
     })
   }
 
